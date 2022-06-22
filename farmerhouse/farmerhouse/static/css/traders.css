@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+body {
+  background-color: black;
+  color: white;
+  font-family: "Lato";
+  margin: 0px;
+  font-size: auto;
+}
+div {
+  display: inline-block;
+}
+ul {
+  margin-top: 20px;
+}
+#logo {
+  margin-left: 100px;
+  margin-right: 650px;
+}
+li {
+  display: inline;
+  text-decoration: none;
+  padding: 5px;
+}
+#acc_image {
+  background-size: contain;
+  width: 30px;
+  border-radius: 40px;
+}
+.content {
+  margin-top: 100px;
+  margin-left: 310px;
+  margin-bottom: 100px;
+  width: max-content;
+  height: max-content;
+}
+.content span {
+  color: #55acee;
+}
+a {
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-family: "Lato";
+}
+a:hover {
+  color: #1cb07b;
+  text-decoration: none;
+}
+.content h3,
+.content h2 {
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  padding: 20px;
+}
+.home_btn{
+    font-family: 'Lato';
+  margin-top: 20px;
+  margin-left:150px;
+  width: 300px;
+  background-size: cover;
+  cursor : pointer;
+}
+
+.home_btn_1{  
+  font-family: 'Lato';
+  margin-top: 20px;
+  margin-left:50px; 
+  width: 300px;
+  background-size: cover;
+  cursor : pointer;
+}
+@media screen and (min-width:170px){
+  .cards{
+    width:80px;
+    margin-bottom:10px;
+  }
+}
+#crops-h1 {
+  font-size: 30px;
+  margin-top: 20px;
+  margin-left: 100px;
+  font-family: sans-serif;
+  color: black;
+}
+#google_translate_element{
+  float:right; 
+}
+.cards {
+  margin-top: 20px;
+  width: 100%;
+  height: 1100px;
+  background-color: white;
+}
+.card-1 {
+  width: 250px;
+  height: 300px;
+  border-radius: 4px;
+  margin-left: 100px;
+  margin-bottom: 15px;
+  background: #fff;
+  border: 2px solid black;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 1.5);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+}
+
+.card-1 img,
+.card-2 img,
+.card-3 img,
+.card-4 img,
+.card-5 img,
+.card-6 img {
+  width: 100%;
+  height: 40%;
+}
+
+.card-1,
+.card-2,
+.card-3,
+.card-4,
+.card-5,
+.card-6 {
+  text-align: center;
+  background-color: white;
+  color: black;
+}
+.card-1 {
+  margin-left: 100px;
+}
+
+.card-1 button,
+.card-2 button,
+.card-3 button,
+.card-4 button,
+.card-5 button,
+.card-6 button {
+  background-color: #ffe111;
+  width: 160px;
+  height: 60px;
+  border-radius: 6px;
+  border: 2px solid black;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px;
+  cursor: pointer;
+}
+.card-1 button:hover,
+.card-2 button:hover,
+.card-3 button:hover,
+.card-4 button:hover,
+.card-5 button:hover,
+.card-6 button:hover {
+  background-color: #1cb07b;
+  color: black;
+  /* border-radius: 60px; */
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+.cards h2,
+#head {
+  text-align: center;
+}
+#paid {
+  background-color: #ffe111;
+  width: 160px;
+  height: 60px;
+  margin-left: 500px;
+  font-weight: bold;
+  border-radius: 6px;
+  border: 2px solid black;
+  font-size: 15px;
+  padding: 5px;
+  cursor: pointer;
+}
+#Nav button:hover {
+  background-color: #1cb07b;
+  color: black;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+#head {
+  color: white;
+  margin-top: 20px;
+}
+.head-1,
+.head-2,
+.head-3 {
+  background-color: #ffe111;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+}
+.head-1 {
+  margin-left: 240px;
+}
+.head-2 {
+  margin-left: 70px;
+}
+.head-3 {
+  margin-left: 70px;
+  font-family: "Lato";
+  font-size: 20px;
+}
+.head-1 img,
+.head-2 img,
+.head-3 img {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  border-radius: 50px;
+}
+.contributers span {
+  color: rgb(0, 162, 255);
+}
+.contributers {
+  width: 100%;
+  height: 500px;
+  background-color: black;
+}
+#akash_words p,
+#krish_words p,
+#dhairya_words p {
+  font-family: "Lato";
+  font-weight: bold;
+}
+.footer {
+  margin: 0px;
+  height: 350px;
+  width: 100%;
+  background-color: #1cb07b;
+}
+.footer ul {
+  margin-left: 100px;
+  list-style-type: none;
+  margin-top: 30px;
+}
+.footer li {
+  margin-left: 90px;
+  display: inline-block;
+  padding: 20px;
+}
+#design {
+  width: 900px;
+  margin-left: 280px;
+}
+#description {
+  text-align: center;
+  width: 900px;
+  margin-left: 290px;
+  font-size: 20px;
+}
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.fa:hover {
+  opacity: 0.7;
+}
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+}
+
+.fa-instagram {
+  background: #ce2e7e;
+  color: white;
+}
+.fa-twitter {
+  background: #55acee;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+.media-icons {
+  margin-left: 630px;
+  margin-top: 40px;
+}
+.footer a:hover {
+  color: black;
+}
+#sub-footer {
+  background-color: #41b98f;
+  margin-top: 40px;
+  width: 100%;
+  height: 100px;
+  font-size: 20px;
+  text-align: center;
+}

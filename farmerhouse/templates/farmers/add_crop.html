@@ -1,0 +1,258 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="{% static './assets/images/logo.png' %}" type="image/x-icon" />
+        <title>Add Crops</title>
+        <style>
+            body {
+                background-color: #0B0E11;
+                color: white;
+            }
+
+            #farmer {
+                margin-bottom: 20px;    
+            }
+
+            #select_crop {
+                width: fit-content;
+                height: fit-content;
+                margin-bottom: 10px;
+                ;
+            }
+
+            p {
+                margin-left: 20px;
+            }
+
+            #farmer_quotes {
+                margin-top: 10px;
+                font-style: italic;
+            }
+
+            #image_url {
+                margin-bottom: 20px;
+                margin-left: 15px;
+            }
+        </style>
+        
+    </head>
+
+    <body>
+
+
+        <div class="container">
+            <div class="row py-5 mt-4 align-items-center">
+
+                <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+                    <img src="{% static './assets/images/farmer-logo.png' %}">
+                    <h5 id="farmer_quotes">"I'm Serving Many , Aatmanirbhar kisan in LOCKDOWN"</h5>
+                </div>
+
+
+                <div class="col-md-7 col-lg-6 ml-auto">
+                    <h2 id="farmer">Add Your Crop Here</h2>
+
+                    <form action="{% url 'add_crop' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <p>Select Crop :- &nbsp;&nbsp;&nbsp;</p>
+                            <select name="crop_name" class="custom-select" id="select_crop">
+                                
+                                <option value="Tomato">Tomato</option>
+                                <option value="Onion">Onion</option>
+                                <option value="Potato">Potato</option>
+                                <option value="Cabbage">Cabbage</option>
+                                <option value="Carrot">Carrot</option>
+                                <option value="Bhindi">Bhindi</option>
+                                <option value="Lemon">Lemon</option>
+                                <option value="Coconut">Coconut</option>
+                                <option value="Wheat">Wheat</option>
+                                <option value="Rice">Rice</option>
+                                <option value="Bitter Gourd">Bitter Gourd</option>
+                                <option value="Bottle Gourd">Bottle Gourd</option>
+                                <option value="Garlic">Garlic</option>
+                                <option value="Capsicum">Capsicum</option>
+                                <option value="Betroot">Betroot</option>
+                                <option value="Broccoli">Broccoli</option>
+                                <option value="Peas">Peas</option>
+                                <option value="Kasori Methi">Kasori Methi</option>
+                                <option value="Brinjal">Brinjal</option>
+                                <option value="Pumpkin">Pumpkin</option>
+                                <option value="Sweet Potato">Sweet Potato</option>
+                            </select>
+                            <div class="input-group col-lg-10 mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i class="fa fa-money text-muted"></i>
+                                    </span>
+                                </div>
+                                <input id="firstName" type="text" name="crop_price" placeholder="(per Quinton.)"
+                                    class="form-control bg-white border-left-0 border-md">
+                            </div>
+                            <div class="input-group col-lg-10 mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i class="fa fa-balance-scale text-muted"></i>
+                                    </span>
+                                </div>
+                                <input id="firstName" type="text" name="crop_quantity"
+                                    placeholder="(Total Quinton to be listed)"
+                                    class="form-control bg-white border-left-0 border-md">
+                            </div>
+                            <div class="input-group col-lg-10 mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i class="fa fa-address-card" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+
+                                <input type="text" class="form-control" id="inputAddress" placeholder="Address">
+                            </div>
+                            <div class="form-group">
+                            </div>
+                            <div class="form-row ml-2">
+                                <div class="col-md-3 mb-3">
+                                    <label for="validationCustom03">City</label>
+                                    <input type="text" class="form-control" id="validationCustom03" placeholder="City"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid city.
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="validationCustom04">State</label>
+                                    <input type="text" class="form-control" id="validationCustom04" placeholder="State"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid state.
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="validationCustom05">Zip</label>
+                                    <input type="text" class="form-control" id="validationCustom05" placeholder="Zip"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid zip.
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="input-group col-lg-12 mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i class="fa fa-phone-square text-muted"></i>
+                                    </span>
+                                </div>
+                                <select id="countryCode" name="countryCode" style="max-width: 80px"
+                                    class="custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
+                                    <option>+91</option>
+                                </select>
+                                <input id="phoneNumber" type="tel" name="phone" placeholder="Phone Number"
+                                    class="form-control bg-white border-md border-left-0 pl-3">
+                            </div>
+                            <div class="file-field big" id="image_url">
+
+                                <a class="btn-light btn-lg mb-3">
+                                    <i class="fa fa-file-image-o"></i>
+                                    <label for="img" class="inlineblock image-upload">Select Photo:</label>
+                                    <input type="file" class="inlineblock" id="img" name="photo" >
+                                    <input type="hidden" name="url" id="url">
+                                    
+                                    
+                                </a>
+                                <button type="button" onclick="uploadimage()">Upload</button>
+
+                            </div>
+                         
+                            <div class="input-group col-lg-6 mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i class="fa fa-lock text-muted"></i>
+                                    </span>
+                                </div>
+                                <input id="password" type="password" name="password" placeholder="Password"
+                                    class="form-control bg-white border-left-0 border-md">
+                            </div>
+
+
+                            <div class="input-group col-lg-6 mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i class="fa fa-lock text-muted"></i>
+                                    </span>
+                                </div>
+                                <input id="passwordConfirmation" type="text" name="confirm_password"
+                                    placeholder="Confirm Password"
+                                    class="form-control bg-white border-left-0 border-md">
+                            </div>
+
+
+                            <div class="form-group col-lg-12 mx-auto mb-4">
+                                <button type="submit" class="btn btn-success btn-block py-100">
+                                    <span class="font-weight-bold ">Add Crop &nbsp;<i class="fa fa-telegram"></i></span>
+                                </button>
+                            </div>
+
+
+                        </div>
+                    </form>
+
+                </div>
+              
+            </div>
+        </div>
+
+    </body>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase.js">
+    </script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBqC6AK4oSe9-jtPrVcwgkf0MSS16cYMKU",
+            authDomain: "farmehouse-1f31c.firebaseapp.com",
+            projectId: "farmehouse-1f31c",
+            storageBucket: "farmehouse-1f31c.appspot.com",
+            messagingSenderId: "32375196131",
+            appId: "1:32375196131:web:e87d254aa10f686d2438d6",
+            measurementId: "G-X162V2DL1G"
+          };
+          
+          firebase.initializeApp(firebaseConfig);
+
+          function uploadimage(){
+            var storage = firebase.storage();
+
+            var file = document.getElementById("img").files[0];
+            console.log(file)
+
+            var storageRef = storage.ref();
+
+            var thisref = storageRef.child('crops/' + file.name).put(file);
+
+            thisref.on('state_changed', function(snapshot){
+                console.log("Successfull");
+            },
+            function(error) {
+                
+            },
+            function(){
+                thisref.snapshot.ref.getDownloadURL().then(function(downloadURL){
+                    document.getElementById("url").value = downloadURL
+                    alert('Upload Successfully')
+                });
+            }
+            );
+
+          }
+    </script>
+
+</html>

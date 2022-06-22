@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+* {box-sizing: border-box;
+font-family:'Lato'}
+
+.img-zoom-container {
+  position: relative;
+  margin-top: 50px;
+}
+
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+.img-zoom-result {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 300px;
+  height: 300px;
+}
+.container{
+  display: flex;
+  margin:20px;
+}
+.info{
+  margin:50px;
+  flex-basis: 600px;
+  font-size: 20px;
+}
+#seller_name{
+  font-family: 'Lato';
+  font-size: medium;
+}
+.dava{
+  display: flex;
+  flex-direction: row;
+  flex-basis: 20%;
+}
+#info p{
+  font-size: small;
+}
+.dava p{
+  font-size: small;
+}
+.share_price{
+  display: flex;
+  margin-top:50px;
+  margin-left:90px;
+  width: 600px;
+}
+#share{
+  margin-left:10px;
+  height: fit-content;
+}
+#share p{
+  margin-top: 10px;
+  width: fit-content;
+}
+.row{
+  margin-top:20px;
+}
+.fa-whatsapp  {
+  color:#fff;
+  background:
+   linear-gradient(#25d366,#25d366) 14% 84%/16% 16% no-repeat,
+   radial-gradient(#25d366 58%,transparent 0);
+}
+#share a{
+  padding:5px;
+}
+.buying-options{
+  flex-direction: row;
+}
+#share span{
+  font-size: 30px;
+}
+.buybutton{
+  height:80px;
+  margin-top: 60px;
+}

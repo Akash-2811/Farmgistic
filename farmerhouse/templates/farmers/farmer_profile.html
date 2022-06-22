@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static './css/farmer_profile.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="shortcut icon" href="{% static './assets/images/logo.png' %}" type="image/x-icon" />
+        <title>Profile Section</title>
+    </head>
+
+    <body>
+        <!--// logged in nav-bar-->
+        <div class="container">
+            <h2 id="top">Your Account</h2>
+            <hr />
+            <div class="card" id="card-1">
+                <div class="row no-gutters">
+                    <div class="col-sm-5">
+                        <img class="card-img" src="{% static './assets/images/box.jpeg' %}" alt="Orders">
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="card-body">
+                            <h5 class="card-title">Your Orders</h5>
+                            <p class="card-text">Track your orders</p>
+                            <a href="{% url 'orderfr' farmer.id %}" class="btn btn-outline-success">View Orders</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-1">
+                <div class="row no-gutters">
+                    <div class="col-sm-5">
+                        <img class="card-img" src="{% static './assets/images/lock.jpg' %}" alt="Orders">
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="card-body">
+                            <h5 class="card-title">Security</h5>
+                            <p class="card-text">Your Passwords and details</p>
+                            <a href="#" class="btn btn-outline-warning">View Information</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-1">
+                <div class="row no-gutters">
+                    <div class="col-sm-5">
+                        <img class="card-img" src="{% static './assets/images/wallet.png' %}" alt="wallet">
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="card-body">
+                            <h5 class="card-title">Payment Methods</h5>
+                            <p class="card-text">Edit or add payment Methods</p>
+                            <a href="#" class="btn btn-outline-warning">View Wallets</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="card-1">
+                <div class="row no-gutters">
+                    <div class="col-sm-5">
+                        <img class="card-img" src="{% static './assets/images/location.png' %}" alt="location">
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="card-body">
+                            <h5 class="card-title">Your Addresses</h5>
+                            <p class="card-text">Edit Address for order and gift.</p>
+                            <a href="#" class="btn btn-outline-warning">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

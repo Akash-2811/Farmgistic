@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		
+		
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+		
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+		<link rel="shortcut icon" href="{% static './assets/images/logo.png' %}" type="image/x-icon" />
+		<link rel="stylesheet" href="{% static './css/login_trader.css' %}">
+		<title>Login</title>
+	</head>
+
+  <body>
+	
+	<div class="container">
+		<div class="login login-1">
+			<header class="login--header login-1--header text-center">
+				<span class="icon icon-medium fa fa-lock"></span>
+				<h3>login to <img src="{% static './assets/images/logo.png' %}" alt="">Account</h3>
+			</header>
+			<form class="login--form" method="POST" action="{% url 'login_trader' %}">
+                {% csrf_token %}
+				<div class="login--form__input-area input-group">
+					<span class="input-group-addon"><span class="fa fa-user"></span></span>
+					<input type="email" name="email" class="form-control" placeholder="email" />
+				</div>
+				<div class="login--form__input-area input-group">
+					<span class="input-group-addon"><span class="fa fa-lock"></span></span>
+					<input type="password" name="password" class="form-control" placeholder="password" />
+				</div>
+				<label class="login--form__input-area checkbox-label">
+					<input type="checkbox" />
+					<span class="checkgraph fa fa-check"></span>
+					Remember me?
+				</label>
+				<button type="submit" class="btn btn-success">Login</button>
+			</form>
+			<footer class="login--footer text-center">
+				<p class="login--footer__text">Or you can login with one of the following</p>
+				<div class="login--footer__social-buttons">
+					<a href="#"><span class="icon icon-small icon-fb fa fa-facebook"></span></a>
+					<a href="#"><span class="icon icon-small icon-tw fa fa-twitter"></span></a>
+					<a href="#"><span class="icon icon-small icon-gp fa fa-google-plus"></span></a>
+				</div>
+				<p class="login--footer__text">dont have an account?<br> <strong><a href="{% url 'trader_register' %}">Register as Trader</a></strong>&nbsp;&nbsp; 
+			</footer>
+		</div>
+        
+	</div>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+.login-container {
+  margin-top: 150px;
+  margin-left: 600px;
+  border: 4px #fff solid;
+  font-family: "Lato";
+  color: #1cb07b;
+  width: fit-content;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  font-family: "Lato";
+}
+#h4-style {
+  margin-left: 10px;
+}
+.content {
+  text-align: center;
+  color: black;
+}
+#fmail,
+#Password {
+  width: 300px;
+}
+
+/* .option-login p {
+  margin-left: 35%;
+} */
+/* .fa {
+  font-size: 45px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 40%;
+  margin-right: 10px;
+  margin-left: 50px;
+}
+.fa:hover {
+  opacity: 0.7;
+  text-decoration: none;
+  color: black;
+}
+/* .fa-facebook {
+  background: #3b5998;
+  color: white;
+} */
+
+/* .fa-twitter {
+  background: #55acee;
+  color: white;
+}
+.fa-google {
+  background: #e61b00;
+  color: white;
+} */
+#showpass {
+  margin-left: 100px;
+}
+
+#my-signin2 {
+  margin-left: 40px;
+}
+#extra p {
+  text-align: center;
+}

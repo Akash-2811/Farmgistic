@@ -1,0 +1,244 @@
+{% load static %}
+
+{% load socialaccount %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="shortcut icon" href="{% static './assets/images/logo.png' %}" type="image/x-icon" />
+
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Register as Farmer</title>
+        <style>
+            body {
+                background-color: #0B0E11;
+                color: white;
+            }
+
+            #farmer {
+                margin-bottom: 30px;
+            }
+
+            #farmer_quotes {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-style: italic;
+                margin-top: 20px;
+            }
+
+            #image_url {
+                margin-bottom: 20px;
+                margin-left: 15px;
+            }
+        </style>
+        <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase.js">
+        </script>
+        <script>
+            const firebaseConfig = {
+                apiKey: "AIzaSyBqC6AK4oSe9-jtPrVcwgkf0MSS16cYMKU",
+                authDomain: "farmehouse-1f31c.firebaseapp.com",
+                projectId: "farmehouse-1f31c",
+                storageBucket: "farmehouse-1f31c.appspot.com",
+                messagingSenderId: "32375196131",
+                appId: "1:32375196131:web:e87d254aa10f686d2438d6",
+                measurementId: "G-X162V2DL1G"
+              };
+              
+              firebase.initializeApp(firebaseConfig);
+    
+              function uploadimage(){
+                var storage = firebase.storage();
+    
+                var file = document.getElementById("img").files[0];
+                console.log(file)
+    
+                var storageRef = storage.ref();
+    
+                var thisref = storageRef.child(file.name).put(file);
+    
+                thisref.on('state_changed', function(snapshot){
+                    console.log("Successfull");
+                },
+                function(error) {
+                    
+                },
+                function(){
+                    thisref.snapshot.ref.getDownloadURL().then(function(downloadURL){
+                        document.getElementById("url").value = downloadURL
+                        alert('Upload Successfully')
+                    });
+                }
+                );
+    
+              }
+        </script>
+    </head>
+
+
+    <body>
+
+
+        <div class="container">
+            <div class="row py-5 mt-4 align-items-center">
+
+                <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+                    <img src="{% static './assets/images/farmer-logo.png' %}">
+                    <h5 id="farmer_quotes">"Farmers are the seed to humanity."</h5>
+                </div>
+
+
+                <div class="col-md-7 col-lg-6 ml-auto">
+                    <h2 id="farmer">Create your <img src="{% static './assets/images/logo.png' %}" alt=""> Account</h2>
+
+                    <form method="POST" action="{% url 'farmer_register' %}">
+                        {% csrf_token %}
+                        <div class="row">
+
+
+                            <div class="input-group col-lg-6 mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i class="fa fa-user text-muted"></i>
+                                    </span>
+                                </div>
+                                <input id="firstName" type="text" name="first_name" placeholder="First Name"
+                                    class="form-control bg-white border-left-0 border-md">
+                            </div>
+
+
+                            <div class="input-group col-lg-6 mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i class="fa fa-user text-muted"></i>
+                                    </span>
+                                </div>
+                                <input id="lastName" type="text" name="last_name" placeholder="Last Name"
+                                    class="form-control bg-white border-left-0 border-md">
+                            </div>
+                            <div class="input-group col-lg-12 mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i class="fa fa-envelope text-muted"></i>
+                                    </span>
+                                </div>
+                                <input id="email" type="email" name="email" placeholder="Email Address"
+                                    class="form-control bg-white border-left-0 border-md">
+                            </div>
+
+                            <div class="input-group col-lg-12 mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i class="fa fa-address-card text-muted"></i>
+                                    </span>
+                                </div>
+                                <input id="address" type="address" name="address" placeholder="Address"
+                                    class="form-control bg-white border-left-0 border-md">
+                            </div>
+
+
+                            <div class="input-group col-lg-12 mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i class="fa fa-phone-square text-muted"></i>
+                                    </span>
+                                </div>
+                                <select id="countryCode" name="countryCode" style="max-width: 80px"
+                                    class="custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
+                                    <option>+91</option>
+                                </select>
+                                <input id="phoneNumber" type="tel" name="phone" placeholder="Phone Number"
+                                    class="form-control bg-white border-md border-left-0 pl-3">
+                            </div>
+
+
+                            <div class="file-field big" id="image_url">
+
+                                <a class="btn-light btn-lg mb-3">
+                                    <i class="fa fa-file-image-o"></i>
+                                    <label for="img" class="inlineblock image-upload">Select Photo:</label>
+                                    <input type="file" class="inlineblock" id="img" name="photo" >
+                                    <input type="hidden" name="url" id="url">
+                                    
+                                    
+                                </a>
+                                <button type="button" onclick="uploadimage()">Upload</button>
+
+                            </div>
+
+                            <div class="input-group col-lg-6 mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i class="fa fa-lock text-muted"></i>
+                                    </span>
+                                </div>
+                                <input id="password" type="password" name="password" placeholder="Password"
+                                    class="form-control bg-white border-left-0 border-md">
+                            </div>
+
+
+                            <div class="input-group col-lg-6 mb-4">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                        <i class="fa fa-lock text-muted"></i>
+                                    </span>
+                                </div>
+                                <input id="passwordConfirmation" type="text" name="confirm_password"
+                                    placeholder="Confirm Password"
+                                    class="form-control bg-white border-left-0 border-md">
+                            </div>
+
+
+                            <div class="form-group col-lg-12 mx-auto mb-0">
+                                <button type="submit" class="btn btn-success btn-block py-2">
+                                    Create Your Farmer Account <i class="fa fa-telegram"></i>
+                                </button>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+                <div class="border-bottom w-100 ml-5"></div>
+                <span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
+                <div class="border-bottom w-100 mr-5"></div>
+            </div>
+
+            <div class="form-group col-lg-12 mx-auto">
+                <a href="#" class="btn btn-danger btn-block py-1 btn-google">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-google" viewBox="0 0 16 16">
+                        <path
+                            d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
+                    </svg>
+                    <span class="font-weight-bold">&nbsp;Continue with Google</span>
+                </a>
+                <a href="#" class="btn btn-primary btn-block py-2 btn-facebook">
+                    <i class="fa fa-facebook-f mr-2"></i>
+                    <span class="font-weight-bold"> Continue with Facebook</span>
+                </a>
+                <a href="#" class="btn btn-dark btn-block py-2 btn-twitter">
+                    <i class="fa fa-github mr-2"></i>
+                    <span class="font-weight-bold"> Continue with Github</span>
+                </a>
+            </div>
+
+
+            <div class="text-center w-100">
+                <p class="text-muted font-weight-bold">Already Registered? <a href="{% url 'login_farmer' %}"
+                        class="text-primary ml-2">Login</a></p>
+            </div>
+        </div>
+
+
+
+    </body>
+
+</html>

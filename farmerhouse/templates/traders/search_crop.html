@@ -1,0 +1,301 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="{% static './assets/images/logo.png' %}" type="image/x-icon" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+            body {
+                text-decoration: none;
+                font-family: 'Lato';
+                box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+                transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+                    0.3s box-shadow,
+                    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+            }
+
+            .container {
+                margin-left: 10px;
+            }
+
+            .container,
+            .sub-container {
+                display: inline-flex;
+            }
+
+            .wrapper {
+                margin-top: 50px;
+                width: auto;
+                background: #fff;
+            }
+
+            .customer_review,
+            .price_range,
+            .payment_methods,
+            .availability {
+                width: 50vh;
+            }
+
+            .epara {
+                font-weight: bold;
+            }
+
+            .a_tags {
+                width: fit-content;
+            }
+
+            .a_tags:hover {
+                cursor: pointer;
+            }
+
+            .a_tags,
+            .price_range a {
+                text-decoration: none;
+            }
+
+            .a_tags a:hover {
+                text-decoration: none;
+            }
+
+            .price_range a {
+                color: black;
+            }
+
+            .price_range a:hover {
+                color: #1cb07b;
+            }
+
+            .checked {
+                color: #1cb07b;
+            }
+
+            .price_range span {
+                display: inline-block;
+            }
+
+            .sellers_list {
+                text-decoration: none;
+                cursor: pointer;
+                margin-top: 50px;
+            }
+
+            .emergency a {
+                color: black;
+            }
+
+            .emergency a:hover {
+                text-decoration: none;
+                color: black;
+            }
+
+            .crop_des {
+                width: 100vh;
+                padding-left: 20px;
+                ;
+                padding-right: 20px;
+                padding-bottom: 20px;
+            }
+
+            .crop_image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .crop_image img {
+                width: 100%;
+                height: auto;
+                background-size: contain;
+                overflow: hidden;
+            }
+
+            .big-emergency {
+                display: inline-block;
+            }
+
+            .vl {
+                border-left: 2px solid #F2F2F2;
+                height: 1000px;
+                position: absolute;
+                left: 25%;
+                margin-left: -3px;
+                top: 20px;
+            }
+        </style>
+        <title>Seller List</title>
+
+    </head>
+
+    <body>
+        <div class="vl"></div>
+        <div class="container">
+            <div class="wrapper">
+                <div class="sorters">
+                    <div class="customer_review">
+                        <div style="margin: 20px;">
+                            <p class="epara">
+                                Customer Review
+                            </p>
+                            <div class="a_tags">
+                                <a href="">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+
+                                </a>
+                                <span>&amp; Up</span>
+                                <br>
+                                <a href="">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+
+                                </a>
+                                <span class="fa fa-star"></span>
+                                <span>&amp; Up</span>
+
+                                <br>
+                                <a href="">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </a>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                                <span>&amp; Up</span>
+
+                                <br>
+                                <a href="">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                </a>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span>&amp; Up</span>
+
+                                <br>
+                                <a href="">
+                                    <span class="fa fa-star checked"></span>
+                                </a>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star "></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span>&amp; Up</span>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="price_range">
+                        <div style="margin: 20px;">
+                            <p class="epara">
+                                Price
+                            </p>
+                            <a href="">Under &#x20B9;1,000</a>
+                            <br>
+                            <a href=""> &#x20B9;1,000 - &#x20B9;2,000</a>
+                            <br>
+                            <a href=""> &#x20B9;2,000 - &#x20B9;3,000</a>
+                            <br>
+                            <a href=""> &#x20B9;3,000 - &#x20B9;4,000</a>
+                            <br>
+                            <a href="">Above &#x20B9;4,000</a>
+                            <br>
+
+
+                            <span><input class="input-field form-control" type="text" style="width : 60px;"
+                                    placeholder="Min"></span>
+                            <span>&nbsp;To&nbsp;</span>
+
+                            <span><input class="input-field form-control" type="text" style="width : 60px;"
+                                    placeholder="Max"></span>
+                            &nbsp;&nbsp;
+                            <span><i class="fa fa-rupee"></i></span>
+
+                        </div>
+                    </div>
+                    <div class="payment_methods">
+                        <div style="margin: 20px;">
+                            <p class="epara">
+                                Payment Methods
+                            </p>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Eligible for Pay with Farm House
+                                    Security</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                <label class="custom-control-label" for="customCheck2">Eligible for Pay with
+                                    Delivery</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="availability">
+                        <div style="margin: 20px;">
+                            <p class="epara">
+                                Availability
+                            </p>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                <label class="custom-control-label" for="customCheck3">Include Out of Stock</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="big-emergency">
+                {% for c in crop %}
+                <div class="emergency">
+                    <a href="{% url 'crop_detail' c.id %}">
+                        <div class="sellers_list">
+                            <div class="sub-container">
+                                <div class="crop_image">
+                                    <img src="{{ c.image_link }}" alt="">
+                                </div>
+                                <div class="crop_des">
+                                    <h5>{{c.farmer_id.first_name}} {{c.farmer_id.last_name}}</h5>
+                                    <h5>{{ c.crop_name }}</h5>
+
+                                            <div>
+
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+
+                                            </div>
+                                            <div>
+                                                &#x20B9; {{c.price}}
+                                            </div>
+                                            <div>
+                                                Location : <i class="fa fa-map-marker"></i> {{c.farmer_id.address}}
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <hr>
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+.containner{
+    font-family: "Lato";
+}
+#top{
+    margin-top:3%;
+}
+.orders-list{
+    border : 1px solid #8f7a7a62;
+}
+.orders-list a{
+    text-decoration: none;
+    color:black;
+    cursor: pointer;;
+}
+.orders-list a:hover{
+    text-decoration: none;
+    color:#1cb07b;
+    cursor: pointer;
+}
+.upper-list{
+    background-color: #F6F6F6;
+}
+
+.date{
+    display:flex;
+    color:#000000e7;
+}
+#order-date  , #total  , #shipto{
+    display: inline-block;
+}
+#order-date{
+    padding:2%;
+    margin-left:2%;;
+}
+#total , #shipto{
+    margin-left:3%;
+}
+.bottom-list{
+    padding:1%;
+    border : 1px solid #8f7a7a62;
+    
+}
+.all{
+    display: inline-block;
+}
+#basket{
+    margin-left:10px;
+    margin-right:10px;
+}
+#crop_img{
+    width:70%;
+    height:70%;
+}
+#crop_name{
+    display: flex;
+    margin-bottom: 2%;
+}
+.lighting{
+    background-color: #DEE1E6;
+}
+.all-in{
+    margin-left:40%;
+    margin-top:2%
+}

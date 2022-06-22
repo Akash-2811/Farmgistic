@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <link rel="shortcut icon" href="/FarmHouse/images/logo.png" type="image/x-icon" />
+        
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Your Past Orders</title>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+.container{
+    font-family: "Lato";
+}
+#top{
+    margin-top:3%;
+}
+.orders-list{
+    border : 1px solid #8f7a7a62;
+}
+.orders-list a{
+    text-decoration: none;
+    color:black;
+    cursor: pointer;;
+}
+.orders-list a:hover{
+    text-decoration: none;
+    color:#1cb07b;
+    cursor: pointer;
+}
+.upper-list{
+    background-color: #F6F6F6;
+}
+
+.date{
+    display:flex;
+    color:#000000e7;
+}
+#order-date  , #total  , #shipto{
+    display: inline-block;
+}
+#order-date{
+    padding:2%;
+    margin-left:2%;;
+}
+#total , #shipto{
+    margin-left:3%;
+}
+.bottom-list{
+    padding:1%;
+    border : 1px solid #8f7a7a62;
+    
+}
+.all{
+    display: inline-block;
+}
+#basket{
+    margin-left:10px;
+    margin-right:10px;
+}
+#crop_img{
+    width:70%;
+    height:70%;
+}
+#crop_name{
+    display: flex;
+    margin-bottom: 2%;
+}
+.lighting{
+    background-color: #DEE1E6;
+}
+.all-in{
+    margin-left:40%;
+    margin-top:2%
+}
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h2 id="top">Your Orders</h2>
+            <hr />
+            <!-- <div class="diforders">
+                <a href="">Orders</a>
+            </div> -->
+            {% for c in crop %}
+            
+            <div class="orders-list">
+                <div class="upper-list">
+                    <div id="order-date">
+                        <span class="date">ORDER PLACED</span>
+                        <span class="date">{{c.created_date}}</span>
+                    </div>
+                    <div id="total">
+                        <span class="date">TOTAL</span>
+                        <span class="date"> &#x20B9; {{c.price}}</span>
+                    </div>
+                    <div id="shipto">
+                        <span class="date">From</span>
+                        <span class="date">{{c.farmer_id.first_name}}</span>
+                    </div>
+                </div>
+
+                <div class="bottom-list">
+                    <div class="all">
+                        <img src="{{ c.image_link }}" alt="potato-img" id="crop_img">
+                    </div>
+                    <div class="all">
+                        <a href="" id="crop_name">{{c.crop_name}}</a>
+                        <a id="crop_name" class="btn btn-warning"><span id="basket"><i
+                                    class="fa fa-shopping-basket"></i></span>&nbsp;Buy
+                            it
+                            again</a>
+                    </div>
+                    <div class="all all-in">
+
+                        <a href="" class="btn btn-light lighting" id="crop_name">Write a Product Review</a>
+                        <a href="" class="btn btn-light lighting" id="crop_name">Archive order</a>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+
+    </body>
+
+</html>

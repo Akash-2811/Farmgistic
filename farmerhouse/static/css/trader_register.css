@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+.container {
+  margin-top: 80px;
+  border: 4px #fff solid;
+  font-family: "Lato";
+  color: #1cb07b;
+  width: 1000px;
+  padding: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.container span {
+  color: #1cb07b;
+}
+#create {
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+.container label {
+  color: black;
+  font-weight: bold;
+}
+.inlineblock {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+#warn {
+  font-size: 15px;
+  opacity: 0.8;
+  width: fit-content;
+}
+#buttons,
+#showpass {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.sub-container {
+  width: 500px;
+  display: inline-block;
+}
+.field-wrapper {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.confirm-message {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8em;
+}
+#kisan {
+  background-size: contain;
+  width: 400px;
+  height: 400px;
+  margin: 30px;
+  margin-top: -400px;
+}
+.image-upload {
+  margin-top: 10px;
+}
+.option-login p {
+  margin-left: 10px;
+}
+.fa {
+  padding: 5px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-left: 2px;
+}
+.fa:hover {
+  opacity: 0.7;
+}
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55acee;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
